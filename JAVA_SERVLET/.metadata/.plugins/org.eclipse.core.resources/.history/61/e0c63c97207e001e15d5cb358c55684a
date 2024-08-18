@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<form action="add.jsp" method="post">
+		1st number: <input type="number" name="numb1"><br>
+		2nd number: <input type="number" name="numb2"><br>
+		
+		<!-- <input type=hidden name="CLUSTERID" value="0"> -->
+		<input type="hidden" name="param1" value="Value 1"><br>
+        <input type="hidden" name="param2" value="Value 2"><br>
+        <input type="hidden" name="param3" value="Value 3"><br>
+        <input type="hidden" name="param4" value="Value 4"><br>
+        <input type="hidden" name="param5" value="Value 5"><br>
+        <input type="hidden" name="param6" value="Value 6"><br>
+        <input type="hidden" name="param7" value="Value 7"><br>
+        <input type="hidden" name="param8" value="Value 8"><br>
+        <input type="hidden" name="param9" value="Value 9"><br>
+        <input type="hidden" name="param10" value="Value 10"><br>
+        <input type="hidden" name="param11" value="Value 11"><br>
+        <input type="hidden" name="param12" value="Value 12"><br>
+        <input type="hidden" name="param13" value="Value 13"><br>
+        <input type="hidden" name="param14" value="Value 14"><br>
+        <input type="hidden" name="param15" value="Value 15"><br>
+        <input type="hidden" name="param16" value="Value 16"><br>
+        <input type="hidden" name="param17" value="Value 17"><br>
+        <input type="hidden" name="param18" value="Value 18"><br>
+        <input type="hidden" name="param19" value="Value 19"><br>
+        <input type="hidden" name="param20" value="Value 20"><br>
+        
+        <input type="checkbox" name="paramname">
+		<input type="submit">
+	</form>
+</body>
+</html>

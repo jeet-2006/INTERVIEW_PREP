@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:annotation-config />
+    <!-- Define a simple bean -->
+    <bean id="myBean" class="com.springcore.Student" name="student1">
+        <!-- You can specify properties, constructor arguments, etc. here -->
+        <property name="studentId">
+            <value>
+                1
+            </value>
+        </property>
+
+        <property name="studentName">
+            <value>
+                Jeet
+            </value>
+        </property>
+
+        <property name="studenAddress">
+            <value>
+                Bhagyanagar
+            </value>
+        </property>
+    </bean>
+
+    <bean class="com.springcore.ref.B" name="b1">
+        <constructor-arg name="bName" value="value of B"/>
+    </bean>
+
+    <bean class="com.springcore.ref.A" name="a1">
+        <constructor-arg value="10" />
+        <constructor-arg ref="b1" />
+    </bean>
+
+    <bean class="com.springcore.lifecycle.Samosa" name="s1" init-method="init" destroy-method="destroy">
+        <property name="price" value="10" />
+    </bean>
+
+<!--    <bean class="com.springcore.autoconfig.Address" name="add">-->
+<!--        <property name="street" value="Kanchi gachibowli road" />-->
+<!--    </bean>-->
+
+    <bean class="com.springcore.autoconfig.Address" name="add2">
+        <property name="street" value="Malpur road" />
+    </bean>
+
+<!--    <bean class="com.springcore.autoconfig.Address" name="add">-->
+<!--        <property name="street" value="kanchi gachibowli road" />-->
+<!--    </bean>-->
+
+    <bean class="com.springcore.autoconfig.Employee" name="emp1"></bean>
+    <!-- Additional configurations go here -->
+
+</beans>

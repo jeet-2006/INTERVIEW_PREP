@@ -1,0 +1,7 @@
+PROCESS:
+    Client send request to server:
+            From server request goes to web container:
+                    here web.xml file is there:
+                            it will detect which servlet to call:
+                                    Servlet will procees information and send response to client.
+------------------------------------------------------------------------------------------------------------------------------------------------

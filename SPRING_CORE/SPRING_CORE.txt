@@ -1,0 +1,186 @@
+Spring:
+    -> Dependency injection framework.
+
+Dependency Injection:
+    -> one class is dependent on another.
+    -> creating address class object in Student class.
+    -> used to make application loosely coupled (as no need of create object).
+
+Inversion of control:
+    -> give control to spring for object creation.
+
+Spring IOC Container:
+    -> cretaes and inject dependency.
+    -> it's maintain object lifecycle.
+    -> with help of configuration it will create beans.
+
+APPLICATION CONTEXT:
+    -> Represenation of ioc container.
+    -> 3 classes implements ApplicationContext
+            1. ClassPathXmlApplicationContext:
+                    -> serches xml configs from java class path.
+
+            2. AnotationConfigApplicationContext
+                    -> searches for bean where we used annotation
+
+            3. FileSystemXmlApplicationContext
+                    -> searches for config files.
+
+---------------------------------------------------------------------------------------------------
+
+DEPENDENCY INJECTION:
+    -> can be done with 2 ways.
+            1. constructor injection
+                -> Using <constuctor-arg value="">
+            2. Setter injection
+                -> Using <property value="">
+    
+    -> using configuration we can choose one of the way.
+
+CONFIGURATION FILE:
+    -> where we can declare beans and it's dependency.
+
+=> IOC container is inject based on data types(premptive, Collection, User defined).
+
+BEAN:
+    -> Simple java class
+    -> contains data member and getter setter.
+
+---------------------------------------------------------------------------------------------------
+NOTE: if ur project is maven then config file should place in resources folder.
+---------------------------------------------------------------------------------------------------
+
+CONSTRUCTOR INJECTION:
+    -> use type attribute to avoide ambiguity
+    -> Ambiguity example:
+            <constuctor-arg value="10"> // By default it will consider value as string
+            A(int a){this.a = a}
+            A(String a){this.a = a} // this constructor will call.
+
+SPRING LIFECYCLE: 
+    -> object creation
+    -> property initialization
+    -> call init method()
+    -> we can use bin
+    -> call destroy method()
+    -> object destroyed
+
+3 ways to configure init and destroy method:   
+    1. using xml config:
+        -> in bean tag u can add attribute 
+            => init-method="<name>" destroy-method="<name>"
+    2. using interfaces:
+        -> implement iIitializeBean, DisposalBean
+            => now override methods.
+    
+    3. using annotation:
+        -> add below annotation before method that u want to create as init and destroy.
+                ex:
+                    @PostConstruct
+                    pubic void init(){}
+
+                    @PreDestroy
+                    public void destroy() {}
+
+                => public void is compulsary, name can be anything.
+
+NOTE:
+    to enable annotation add below tag in xml file:
+        -> <context:annotation-config />
+
+---------------------------------------------------------------------------------------------------
+AUTOWIRING:
+    -> inject dependency automatically.
+    -> link one object to another
+
+    ADVANTAGE:
+        -> automatic
+        -> less code
+
+    DISADVANTAGE:
+        -> no controll of programmer.
+        -> no use for premptive and string value.
+
+    2 ways to use AUTOWIRING:
+        1. xml:
+            -> byName: checks name (setter injection)
+            -> byType: check object type (setter injection)
+            -> byConstructor: check name and call constructor.
+        
+        2. annotation:
+            @Autowired:
+                -> it can above property, setter method or constructor.
+                -> it will search byType.
+                -> if we will create two beans for address then exception came.
+
+@Qualifier
+    -> used for link specefic bean.
+
+Stand alone collection:
+    -> using util schema we can create.
+    -> while creating proprty we can give ref of util schema.
+
+
+
+--------------------------------------------------SPRING_MVC-------------------------------------------------
+MVC ARCHITECTURE:
+    -> First request will go to Front Controller(Dispatcher Servlet)
+    -> then request will go to controller(java class)
+    -> then controller will return model object and jsp page.
+    -> Front controller send object to proper template(jsp file).
+    -> template will return html.
+
+Dispatcher Servlet:
+    -> front controller
+    -> configure this in web.xml
+
+Spring configuration:
+    -> create xml file in web-inf.
+    -> Add component scan in xml to scan spring project.
+
+    JSP configuration:
+    -> add view resolver class in xml.
+    -> in properties mention path.
+            - <property name="prefix" value="/web-inf/pages">
+            - <property name="suffix" value=".jsp">
+
+Model object:
+    -> used for pass data from controller to view.
+
+Servlet listener:
+    -> when app deployed then this methods will run.
+    -> initialize method
+    -> destroy method.
+
+    
+Annotations:
+
+    1. RequestMapping("/"):
+            -> by default GET.
+            -> RequestMapping("/", method=RequestMethos.POST)
+
+    2. PathVariable:
+            -> take value from path
+            ->home/get/2
+
+    3. RequestParam:
+            -> take query parameters value
+            -> /home?id=100&name=cvb 
+
+SPRING MVC Exception handeleing:
+    1. using HTTP status code
+    EX:
+    @ResponseStatus(statu.code=not found)
+    public class OrderNotFoundException extends RuntimeException{}
+
+    if (order == null)
+        throw new OrderNotFoundException();
+
+    2. Controller based
+            -> using @ExceptionHandler annoatation
+
+    3. Gobal Exception handeleing
+            -> @ControllerAdvice
+                public class GlobalExceptionHandler{
+                    .....all exception u can create here
+                }

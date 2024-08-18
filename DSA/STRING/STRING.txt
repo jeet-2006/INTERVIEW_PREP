@@ -1,0 +1,2 @@
+SUBSTRING:
+	=> if length of string is n then possible sustring is n*(n+1)/2;

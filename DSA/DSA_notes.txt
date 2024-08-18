@@ -1,0 +1,10 @@
+DATA STRUCTURE:
+--> way to arrange data in main memory for efficient usage.
+--> Array, Linkedlist, Queue, Dequeue, stack, map, tree, graph, etc.
+
+ALGORITHM: 
+--> sequence of steps to solve given problem.
+--> sorting an array.
+
+--> Main Memory = RAM.
+

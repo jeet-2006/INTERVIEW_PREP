@@ -1,0 +1,74 @@
+<%@page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"
+	import="java.util.*"%>
+<%
+int cId = 0;
+try {
+	String clusterId=request.getParameter("CLUSTERID");
+	out.println(clusterId);
+	if(clusterId != null){
+		cId=Integer.parseInt(clusterId);
+	}else{
+	out.println("Set to default value::"+cId);
+	}
+
+} catch(Exception e) {
+	out.println(e);
+}
+	String [] paramnames = request.getParameterValues("paramname");
+	Hashtable ht=new Hashtable();
+	String paramNew=null;
+	String source = request.getParameter("source");
+	if(paramnames!=null) {%>
+	<b>These are the Configurable Parameters that are added/modified.</b>
+	<%	
+		if ( source == null || source != null && source.trim().equals("") ) {%>
+			Invalid Source
+			<% return;  
+		}
+		for(int i=0;i<paramnames.length;i++) {
+		String paramname=paramnames[i];
+		String paramvalue=request.getParameter(paramname);
+		if(paramname.equals("newvalue")) {
+			paramname=request.getParameter("newparam");
+			paramNew=paramname;
+		}
+		ht.put(paramname,paramvalue);
+	}
+	AdminDBManager.updateConfParameters(ht,cId);
+	if ( source.equalsIgnoreCase("SYSTEM")){
+		AdminDBManager.updateSystemConfig(ht,cId);
+	}else{
+		AdminDBManager.updateConfParameters(ht,cId);
+	}
+}
+
+if(paramnames!=null) {%>
+	<table border=1>
+	<tr><td>Serial No</td><td>Config Name</td><td>Config Value</td></tr>
+	<% 
+		if ( source.equalsIgnoreCase("SYSTEM")){
+			ht = CommonDBManager.readSystemConfiguration(cId);
+		}else{
+			ht = CommonDBManager.readServerConfiguration(cId);
+		}
+	    int j=0;
+		for(j=0;j<paramnames.length;j++) {
+                        String configName=paramnames[j];
+                        String configValue=(String)ht.get(configName); 
+			if(!configName.equals("newvalue")){%>
+				<tr><td><%=j%></td><td><%=configName%></td><td> <%=configValue%></td></tr>
+			<%}
+		}
+		if(paramNew!=null) {
+			String paramNewVal=(String)ht.get(paramNew);%>
+			<tr><td><%=j-1%></td><td><%=paramNew%></td><td> <%=paramNewVal%></td></tr>
+		<%}%>
+	</table>
+	<form action="initsystemconf.htm">
+	<input type="submit" value="Initialize Parameters">	
+	<input type="hidden" name="source" value="<%=source%>">
+	</form>
+<%} else {%>
+<b>	None of the Configuration Parameters are changed.</b>
+<%}%>

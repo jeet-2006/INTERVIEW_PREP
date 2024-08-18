@@ -1,0 +1,3 @@
+ARRAYLIST:
+1> return arrayList with Single default value.
+    => return new ArrayList<>(){{add(-1)}};

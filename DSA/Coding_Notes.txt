@@ -1,0 +1,146 @@
+** STORE X AND Y IN ONE PLACE USING MODULO **
+
+--> val = x + (Y % (maxi+1)) * maxi+1
+**maxi = maximum element in array
+
+
+EX: x = 10, y = 15
+    val = 10 + (15 % (16)) * 16 = 250.
+
+x(current) = 250 
+x(original) = 250 % 16 = 10
+y = 250 / 16 = 15
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+** FIND SUB ARRAY WITH 0 SUM **
+
+step 1 => store sum value in map;
+step 2 => Then check if for index i we found sum in map then sub array between this two sum is 0.
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+* Count total possible occurence of element in sub arrays:
+
+Ex: Arr = 1,2,3,4
+
+	1 
+	1 2
+	1 2 3
+	1 2 3 4  
+------------------------
+count of element = (N-i) * (i+1)
+	1 => 4 x 1
+	2 => 3 x 2
+	3 => 2 x 3
+	4 => 1 x 4
+
+----------------------------------------------------------------------------------------------------------------------------------
+sub array divisible by k
+Ex:
+	4 5 0 1 2 2        K=5
+
+Sum:
+  0 4 9 9 10 12 14
+	
+Sum%k:
+  0	4 4 4 0 2 4
+
+NOTE: same modulo is coming means we added some value wich is divisible by 5
+	: for 0 sum by default 1 value will be there in map
+	
+
+
+4 + 5 = 9 % 5 = 4 => here we added 5 which is divisible by 5 => count = mp[4]-> 1 -> {5}
+9 + 0 = 9 % 5 = 4 => again we added 0 => count = 1 + mp[4] = 1 + 2 = 3 {0}, {5, 0}
+9 + 1 = 10 % 5 = 0 => count = 3+1 = 4 => {4, 5, 0, 1}
+10 + 2 = 12 % 5 = 2 => as we found 2 first time no new sub array added
+12 + 2 = 14 % 5 = 4 => again 4 come => 4 + mp[4] => 4 + 3 => 7 => {5, 0, 1, 2, 2}, {0,1,2,2}, {1,2,2}
+
+MAIN LOGIC: if we found total x value already present in map then it can form new x sub array
+			=> for last 4 at index 5 we already found 3 4 at index 0, 1 and 2
+				=> So new 3 sub array will be in range of 0+1 to 5, 1+1 to 5, 2+1 to 5
+
+------------------------------------------------------------------------------------------------------------
+
+NOTE: 
+	WHENEVER we need to reaarange array such a way that few elements on right side or few on left then think of qick sort first.
+
+
+------------------------------------------------------------------------------------------------------------
+ Moore's Voting Algorithm:
+ 
+ PROBLEM: find element which occured strictly mor than n/2 times;
+ 
+	1st step: 
+		Select element as candidate if count = 0 (Means no element is dominating) and vote for that candidate
+	
+	2nd step:
+		if currrent ele is equal to candidate then vote for that-> cnt++
+		else cnt--
+	
+	3d step:
+		last element will dominant in array, so check count for that element, wether it's greater than n/2.
+			
+-------------------------------------------------------------------------------------------------------------------------
+Q: 1-based index
+Input: n = 5 arr[] = {2, 3, 2, 3, 5} p = 5
+Output: 0 2 2 0 1
+Explanation: Counting frequencies of each array element We have: 1 occurring 0 times. 2 occurring 2 times. 3 occurring 2 times. 4 occurring 0 times. 5 occurring 1 time.
+
+
+class Solution{
+    //Function to count the frequency of all elements from 1 to N in the array.
+    private static void swap(int arr[], int i, int j) {
+        arr[i] = arr[i] + arr[j];
+        arr[j] = arr[i] - arr[j];
+        arr[i] = arr[i] - arr[j]; 
+    }
+    public static void frequencyCount(int arr[], int N, int P)
+    {
+        int i=0;
+        while (i < N) {
+            if (arr[i] < 0) {
+                i++;
+                continue;
+            }
+            if (arr[i] > N) {
+                arr[i++] = 0;
+                continue;
+            }
+            int j = arr[i] - 1;
+            if (arr[j] > 0) {
+                swap(arr, i, j);
+                arr[j] = -1;
+            } else {
+                arr[i++] = 0;
+                arr[j]--;
+            }
+        }
+        Arrays.setAll(arr, idx -> arr[idx]*-1);
+    }
+}
+-------------------------------------------------------------------------------------------------------------------------------------------------
+Q:
+N = 6
+A[] = {1, 2, 0, 3, 0, 0} 
+Output:
+1
+Explanation:
+Jump 1 step from first index to
+second index. Then jump 2 steps to reach 
+4th index, and now jump 2 steps to reach
+the end.
+
+static int canReach(int[] A, int N) {
+        int max_ind = 0;
+        
+        for (int i=0; i<N; i++) {
+            if (i > max_ind) {
+                return 0;
+            }
+            max_ind = Math.max(max_ind, i+A[i]);
+        }
+        return 1;
+    }
+-------------------------------------------------------------------------------------------------------------------------------------------------

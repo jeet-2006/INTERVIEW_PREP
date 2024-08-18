@@ -1,0 +1,23 @@
+BST: root node is alway greater than left childrean and always less then right childrean.
+     20
+    /  \ 
+  10    25
+  /\	 .
+ 5 10	 .
+  .
+  .
+  .
+
+*BST FACTS*
+
+==> for above example left childrean should be less then 20 and right should be greater than 20.
+==> In BST insert, delete and search operation will take log(n) time.
+==> When we performs inOrder traversal in BST it will always sorted.
+    if we consider above example inOrder traversal = 5 10 15 20 25.
+
+
+
+Q: when to use Tree?
+A: When we want some data in particular range. like 10 to 30
+A: when we want data in structural format.
+

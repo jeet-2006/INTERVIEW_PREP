@@ -1,0 +1,34 @@
+DESIGN PATTERN:
+    - well proved solution for commonly occur problem.
+
+3 types:
+    1. Creational:
+            ->  concerned with the way of creating objects.
+    2. Structural:
+            -> code structure related.
+    3. Behavioral:
+            -> related to interaction between two objects.
+
+CREATIONAL:
+
+1. Singleton:
+        -> only single instance should be created and 
+           single object can be used by all other classes.
+        
+        -> two forms of singleton:
+                Early Instantiation: creation at load time.
+                Lazy Instantiation: creation when required.
+
+        -> Advantage of Singleton design pattern:
+                - Saves memory because object is not created at each request. 
+                - mostly used in multi-threaded and database applications.
+
+        -> Ways to break Singleton pattern:
+                - using reflaction application.
+                    - setAccesible(true)
+                - using clonable.
+                - refer code in ur system fot more understanding.
+
+2. Factory:
+        -> when for one super class multiple child classes are there then we need to use it.
+        -> refer code in your interview_prep folder

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<form action="add.jsp" method="post">
+		1st number: <input type="number" name="num1"><br>
+		2nd number: <input type="number" name="num2"><br>
+		
+		<!-- <input type=hidden name="CLUSTERID" value="0"> -->
+		<input type=hidden name="CLUSTERID" value="0">
+		<input type=hidden name="paramname" value="123">
+		<input type=hidden name="paramname" value="1234">
+		<input type=hidden name="paramname" value="12345">
+		<input type="submit">
+	</form>
+</body>
+</html>

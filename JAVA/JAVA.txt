@@ -1,0 +1,186 @@
+JAVA:
+	developed by: Sun Microsystems (subsidiary of Oracle) in 1995
+
+4 types of applications that can be created using Java programming:	
+	1> Standalone Application: 
+		Desktop App.
+		ex: Media player.
+		Using: AWT and Swing.
+	2> Web Application: Spring, JPA
+	3> Enterprice Application: 
+		which includes security. 
+		EX: Banking application.
+		Using: EJB
+	4> Mobile Application: Android.
+	
+JAVA FEATURES:
+	1> Object oriented: it simplifies software development and maintenance.
+
+	2> Platform Independent: java code is compiled by the compiler and converted into bytecode. 
+	 This bytecode is a platform-independent code because it can be run on multiple platforms for example, Windows, Linux, Sun Solaris, Mac/OS, etc., 
+	 i.e., Write Once and Run Anywhere (WORA).
+
+	3> Secure: 
+			- JVM will verify byte code and ensures no unsafe operation should happen.
+			- in built cryptographic security.
+	4> MultiThreaded:
+
+	5> Portable:
+		-> We can carry the Java bytecode to any platform.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+JAVA vs C++:
+->Points which are missing in JAVA:
+	- call by referebnce
+	- multiple inheritance using class. achieve using interfaces.
+	- pointers
+	- operator overloading.
+	- Go to statement
+	- Structure 
+	- Union
+
+-> Points which are missing in c++
+	- built-in support for threads
+	- Platform Independent
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+JDK (Java development Kit):
+	-> it provides all tools to work with Java.
+	-> it provide Java compiler and interpreter.
+	-> it internally contain JRE and JVM.
+
+JRE (Java Runtime ENV):
+	-> it provides environment to run java code.
+	-> it internally contains JVM and Java libraries.
+
+JVM (Java Virtual Machine):
+	-> it's software in form of interpreter.
+	-> written in C
+	-> work: loading, verifying and execute bytecode.
+	-> it contains JIT internally.
+
+JIT (Just In Time Compiler):
+	-> convert byte code to machine code.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+How Java Works?
+
+-> Java is interpreted Lang.
+-> The source code in Java is first compiled into the bytecode(.class file). 
+-> Then the Java Virtual Machine(JVM) compiles the bytecode to the machine code.
+----------------------------------------------------------------------------------------------------------------
+
+CLASS LOADER:
+	-  responsible for loading Java classes into the JVM dynamically at runtime.
+
+3 types:
+	1. BROOTFORCE:
+			- loads jdk internal classes, ex: rt.jar
+	2. Extention:
+			- loads jdk extention library form '$JAVA_HOME/lib/directory'
+	3. System:
+			- class written by developer.
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------
+Use of public static void main (string []args)
+
+-> public: JVM can call this method.
+-> static: JVM can invoke it without instantiating the class. it saves memory
+-> void:  JVM can’t do anything with the return value of it.
+-> main: predefined method name.
+-> String []args: It stores Java command-line arguments, we can pass argument while running.
+	      EX: javac GeeksforGeeks.java
+    		  java GeeksforGeeks 1 2 3
+	      => here 1, 2 and 3 are aruments which stores in args array.
+
+=> Java variable Can contain alphabets, $character, _character, and digits if the other conditions are met.
+
+STEPS TO RUN JAVA FILE:
+
+To compile:
+	javac Simple.java
+To execute:
+	java Simple
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+WAYS WE CAN WRITE A JAVA PROGRAM:
+
+1> static public void main(String args[])  
+2> public static void main(String[] args)  
+3> public static void main(String []args)  
+4> public static void main(String args[])  
+5> public static void main(String... args)  
+6> public static final void main(String[] args)  
+7> final public static void main(String[] args)  
+8> final strictfp public static void main(String[] args)  
+
+*NOTE* => Having a semicolon at the end of class is optional in Java.
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+JAVA KEYWORDS:
+	->Words that are reserved and used by the Java compiler.
+
+JAVA LITERALS:
+	-> A constant value that can be assigned to the variable.
+	EX: String name = "Jeet"
+	-> here jeet is string literal.
+
+INPUT IN JAVA:
+	Scanner sc = new Scanner(System.in)
+	int n = sc.nextInt();
+	String str = sc.nextLine();
+
+VARIABLE: container which holds data
+	=> LOCAL: declared in method.
+	=> INSTANCE: declared in class.
+	=> STATIC: common between objects
+
+JAVA Wrapper class:
+	=> Larger entity encapsulate smaller entity.
+	=> Object class that encapsulate primtive data type.
+	=> it provides autoboxing and unboxing.
+	=> Integer is wrapper class of int.
+
+	AUTO BOXING:
+		-> premptive to object conversion:
+			EX: int a = 8;
+				Integer b = a// autoboxing
+				Integer c = Integer.valueOf(a)// internal procees no need to write.
+		-> object to premptive:
+				Integer a = new Integer(7);
+				int b = a//unboxing
+				int c = a.intValue()// auto;
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+Primitive data types: 
+	=> Simple dataType.
+	=> The primitive data types include boolean, char, byte, short, int, long, float and double.
+
+Non-primitive data types: 
+	=> complext datType.
+	=> collection of datatypes
+	=> The non-primitive data types include arrays, String, lists, objects, classes.
+
+Q: Why char uses 2 byte in java and what is \u0000 ?
+	=> java uses Unicode system not ASCII code system.
+	=> \u0000 is lowest range.
+	=> Ascii code is subset of unicode.
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+JAVA DEFAULT CONSTRUCTOR:
+
+	=> 	If you are not defining any constructor then compiler generates 
+		default constructor automatically
+
+	=> 	if you define any constructors with arguments in your class, 
+		the default constructor won't be automatically generated. 
+		In such cases, if you still want to provide a no-argument constructor, 
+		you'll need to define it explicitly.
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+JAVA_ENUM:
+	-> used to define list of constants.
+	-> we cant create instance as constructer is private.
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+	
+
+

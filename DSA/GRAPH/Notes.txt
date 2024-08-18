@@ -1,0 +1,25 @@
+**GRAPH**
+
+1. Detect cycle in undirected graph ==> track parent of nodes ==> cycle present if visited node !== parent.
+
+2. Detect cycle in directed graph ==> recursion stack ==> cycle present if visited node present in recursion stack.
+
+* DAG(Direct Acyclic Graph) --> directed graph without cycle.
+
+3. Topology Sort:
+		==> if age u->v then printing order should be same, ex: u,.,.v, ., .
+		==> if age 1->2  => 3, 5, 1, 4, 2  (3, 5, 2, 4, 1 willnot allow)
+		==> applicable on DAG(Direct Acyclic Graph).
+		==> push finished node in stack. Ex: (4 is ended node = 1->2->3->4)
+		==> Using kahn's algorithm => track inDegree of all nodes. push node in queue with zero degree only.
+		==> EX: dependency base sorting (will understand dependency via seeing order) used in OS
+
+4. Dijkstra Algorithm:  (Single source shortest path)
+		==> u -> v => if (dist[u] + cost[v] < dist[v]) dist[v] = dist[u] + cost[v];
+		==> Ex: Google map, any social network.
+ 
+STRONGLY CONNECTED:
+	
+
+
+

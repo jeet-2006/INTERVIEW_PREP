@@ -1,0 +1,510 @@
+*OOPS*
+
+Object:
+    => real world entity. ex: Pen, note, car, tec.
+
+Object Oriented Programming;
+    => Methodology to design program using objects and classes.
+
+OOPS ADVANTAGE:
+    => Easy to understand software
+    => readability:
+            -while seeing class we can easiliy understand how it's object behave.
+    => code reusability.
+    => maintainibility:
+            -  using concepts like inheritance, Abstraction, Encaptsulation, polymorphism.
+
+OOPS BOTTOM-UP APPROCH:
+    => staring with small modules and combined them together.
+    EX: small classes TextParser, TextFormatter and TextAnalyzer that we will use in TextProcessingApp class.
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+6 main concepts:
+- Object:
+    -> it has state and behaviour.
+    -> Car is object. state: color, weight, etc. behaviour: moving.
+
+- class
+    -> Blueprint of objects.
+
+- Inheritance:
+    -> object aquire all properties and behaviour from parent.
+    -> code reusability
+    -> used to achieve run time Polymorphism.
+
+- Polymorphism:
+    -> one task is performed in different ways.
+
+- Abstraction:
+    -> Hiding internal details and showing functionality.
+    -> achieve using abstract class and interface.
+
+- Encaptsulation:
+    -> adding all needed things in capsule. (here capsule is class)
+    -> binding data and methods together into a single unit.
+    -> java class is example of this.
+    -> two terms:
+            data hiding: using Access Modifiers
+            data binding
+
+-Coupling
+    - dependency between two classes.
+    - lously coupled:
+        - EX: Student class have contact class.
+            -> Employee class can also use same contact class.
+            -> change in contact class doesn't afect Student class.
+    - tight coupled:
+            -> Ex of tight couple
+                class Car {
+                    Engine e;
+
+                    Car() {
+                        e = new Engine();
+                    }
+                }
+             -> if parameter of engine constructor changed then we need to change Car as well.
+             => SOLUTION:
+                class Car {
+                    Engine e;
+
+                    Car(Enine e) {
+                        this.e = e;
+                    }
+                }
+
+
+-Cohesion:
+    - relevent method should there in class.
+    - EX: Student class should not contain contact details methods and variable.
+
+-Association
+    - relationshiops:
+    - one to one 
+    - one to many
+    - many to many
+
+    -Aggregation
+        - one-to-one or one-way relationship
+        - Employee has address
+        - adress can exist without Employee.
+
+    -Composition
+        - dependent entity
+        - mobiles can not exist without mobile store.
+        - Car has engin and wheel
+
+ADVANTAGE OF OOPS:
+    -> OOPs makes development and maintenance easier.
+    -> all features of OOPs
+--------------------------------------------------------------------------------------------------------------------------------------------
+AN OBJECT HAS THREE CHARACTERISTICS:
+    STATE: data of object
+
+    BEHAVIOUR: functionality / method
+
+    IDENTITY: implemented via a unique ID
+            : it is used internally by the JVM to identify each object uniquely.
+
+different ways to create an object in Java:
+    - By new keyword
+
+    - By newInstance() method
+
+    - By clone() method
+
+    - By deserialization
+
+    - By factory method etc.
+
+ACCESS MODIFIER:
+
+Public: The method is accessible by all classes.
+
+Private: the method is accessible only in the classes in which it is defined.
+
+Protected: the method is accessible within the same package or subclasses in a different package.
+
+Default: It is visible only from the same package only.
+
+TWO TYPES OF METHOD:
+    INSTANCE METHOD : non static method created in class
+            -Accessor: Get 
+            -Mutator: Set 
+    
+    STATIC METHOD : own by class. shared by object.
+
+    ABSTRACT METHOD : withoud body.
+                    : it hase to be declre in ABSTACT class.
+
+    Fectory METHOD : which returns object.
+--------------------------------------------------------------------------------------------------------------------------------------------
+Object-based programming language follows all the features of OOPs except Inheritance.
+--------------------------------------------------------------------------------------------------------------------------------------------
+CONSTRUCTOR:
+    - name must be the same as its class name
+    
+    - no explicit return type
+    
+    - it cannot be abstract, static, final, and synchronized
+
+=> it returns current class instance.
+--------------------------------------------------------------------------------------------------------------------------------------------
+STATIC KEYWORD:
+    - used for memory management
+    - we can apply static keyword with variables, methods, blocks and nested classes.
+    - it's belongs to a class.
+
+1. Static variable:
+        - can be used to refer to the common property
+            Ex: Collage name of student, company name for employee.
+        -it gets memory only once at the time of class loading.
+
+2. Static method:
+        - A static method can access static data member and can change the value of it.
+        - Restrictions for the static method:
+            - The static method can not use non static data member or call non-static method directly.
+            - this and super cannot be used in static context.
+
+3. Static block:
+        - Is used to initialize the static data member.
+        - It is executed before the main method at the time of classloading (if we declare it after main method then also result will same).
+--------------------------------------------------------------------------------------------------------------------------------------------
+Inheritance:
+
+==> Parent class can create reference of child class.
+
+WHY USE INHERITANCE IN JAVA:
+    - For Method Overriding (so runtime polymorphism can be achieved).
+    - For Code Reusability.
+
+limitations of Inheritance:
+    - more time to process
+    - complex for implementation
+
+Types of interface:
+
+1> SINGLE INTERFACE:
+        - class Mobile extends Electronic device.
+
+2> MULTI LEVEL INTERFACE:
+        - Mobile extends Electronic device.
+        - class Smartphone extends Mobile
+
+3> MULTIPLE INHERITANCE:
+        - acheive through interface.
+        - plane implements flyable and runnable.
+        - LinkedList implements List and deque.
+
+4> Hybrid Inheritance:
+        
+
+5> Hierarchical Inheritance:
+        - car extends vehical && bike extends vehical
+        - computer extends Electronic device && Mobile extends Electronic device.
+
+WHY MULTIPLE INHERITANCE NOT SUPPORT IN JAVA?
+    - To reduce the complexity 
+    - avoid ambiguty: if class c extends A an B and both class contain same method name then ambiguty happens.
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+COMPILE TIME POLYMORPHISM:
+    -> compiler looks at argument and decide which methods needs to call.
+    -> consider below examples.
+
+METHOD OVERLOADING ():
+    - same return type => diff parameters
+        => int add(int, int)
+        => int add(int, int, int)
+    - same parameters => diff return type and type of parameters.
+        => int add(int, int)
+        => double add (double, double)
+    - same Parameters => diff type of parameters.
+        => void sum(int, int)
+        => void sum(double, double)
+
+*TYPE PROMOTION*
+    -> int can be convert to double, long.
+    -> refer conersion chart.
+
+*AMBIGUITY*
+    1>  int add(int, int)
+        double add(int, int)
+    
+    2>  void add(int, long)
+        void add(long, int)
+--------------------------------------------------------------------------------------------------------------------------------------------
+METHOD OVERRIDING:
+
+==> Static method can't be override.
+==> So Main method also can't be override.
+
+Q: Why can we not override static method?
+    => static method is bound with class whereas instance method with an object.
+    => static methods is bound to the class at compile time and overriding is based on dynamic binding.
+
+Covarient Return type:
+    => return type may vary during overriding.
+    => after Java5 we can only override java method by changing subclass return type as subclass Type.
+    => we can't override like int msg() to string msg().
+    => to override method below condition must follow:
+        - overriden method should have same return type:
+            EX:
+                class A {
+                    void msg(){};
+                }
+                class B {
+                    void msg(){};
+               }
+        - Overriden method's return type should child of parent method return class.
+            EX:
+                class A{
+                    Object msg(){return null;}
+                }
+                class B extends A {
+                    String msg() {};
+                }
+                => as String is child of Object it's valid after java5.
+ANOTHER EXAMPLE:
+
+    class A{    
+        A get(){return this;}    
+    }    
+        
+    class B1 extends A{    
+        @Override  
+        B1 get(){return this;}    
+
+        void message(){System.out.println("welcome to covariant return type");}    
+            
+        public static void main(String args[]){    
+            new B1().get().message();    
+        }    
+    }    
+BENEFITS:
+    -> it makes code usable, readable, and maintainable.
+    -> it prevents from casting mistakes.
+--------------------------------------------------------------------------------------------------------------------------------------------
+SUPER KEYWORD:
+    -> refer immediate parent class object.
+    -> refer immediate parent class instance variable.
+    -> used to invoke parent class method.
+    -> used to invoke parent class constructor.
+
+REAL USE:
+    -> we can reuse parent constructor.
+    Emp(int id,String name,float salary) {  
+        super(id,name);//reusing parent constructor  
+        this.salary=salary;  
+    }  
+*NOTE* =>  super() is added in each class constructor automatically by compiler if there is no super() or this().
+--------------------------------------------------------------------------------------------------------------------------------------------
+INSTANCE INITIALIZER BLOCK:
+    -> block like this: {} 
+    -> it will create when object created.
+    -> it will execute after super() constructor.
+
+FINAL KEYWORD:
+    -> it can be 
+        1. method : it can't be override.
+            ex: bank account has deductCharges method.
+            we don't want to override a sit has critical calculations.
+
+        2. variable: it can't be change.
+
+        3. class: it can't be extended.
+                => util classes
+                => where we don't want to extend.
+--------------------------------------------------------------------------------------------------------------------------------------------
+RUN TIME POLYMORPHISM:
+    -> this is process of calling overridden method which is happening in run time.
+
+    * UP-CASTING:
+        -   class A{}  
+            class B extends A{}  
+            A a=new B();//upcasting  
+
+    -> Runtime polymorphism can't be achieved by data members.
+        EX:
+            class Bike{  
+                int speedlimit=90;  
+                }  
+                class Honda3 extends Bike{  
+                int speedlimit=150;  
+                
+                public static void main(String args[]){  
+                Bike obj=new Honda3();  
+                System.out.println(obj.speedlimit);//90  
+            } 
+        o/p -> 90;
+--------------------------------------------------------------------------------------------------------------------------------------------
+STATIC BINDING(compile time):
+    -> Dog d = new Dog();
+
+Dynamic Binding(Run Time):
+    -> Animal a = new Dog();
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+INSTANCEOF:
+    -> checks object type.
+    -> ex:  Dog d = new Dog();
+            print(d instanceof Dog) => true
+       ex:  Dog d = null;
+            print(d instanceof Dog) => false => bcz instance will create when we use new Dog();
+
+DOWNCASTING:
+    -> child class refres to parent class's object.
+        ex: Dog d = new Animal();// complie error
+            Dog d=(Dog)new Animal();  ////Compiles successfully but ClassCastException is thrown at runtime 
+
+        CORRECT EXAMPLE:
+            class Animal {
+                void eat() {
+                    System.out.println("eating....");
+                }
+            }
+            class Dog extends Animal{
+                void eat() {
+                    System.out.println("Dog eating.....");
+                }
+                void bark() {
+                    System.out.println("Barking.....");
+                }
+            }
+
+            class Main{
+                public static void main(String args[]) {
+                    Animal a = new Dog();// calls only inherited method
+                    Dog d = (Dog)a;
+                    
+                    a.eat();
+                    d.bark();
+                    a.bark();//compile time error
+                    
+                }
+            }
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+ABSTRACT:
+    existing in idea without concreate existance.
+ABSTRACT CLASS:
+    -> declared with an abstract keyword.
+    -> It can have abstract and non-abstract methods.
+    -> It cannot be instantiated(we can't create object).
+    -> It can have constructors and static methods also.
+    -> It can have final methods.
+
+ABSTRACTION:
+    -> Hide detail implementation and show only functionality.EX: whatsapp, any application
+
+RULE:
+    -> If there is an abstract method in a class, that class must be abstract.
+
+Capability:
+    -> using abstract class we can avoid interface method to implement.
+    EX: interface A {
+            void a();
+            void b();
+        }
+        abstract class B implements A {
+            public void a(){print("a");}
+        }
+        class M extends B {
+            public void b(){print("b");}
+        }
+    -> We can avoid a() as we already declare in abstract class.
+
+NOTE:
+    -> abstract method should be overridden.
+--------------------------------------------------------------------------------------------------------------------------------------------
+INTERFACE:
+    -> blue print of class
+    -> It has static constants and abstract methods.
+    -> we can create data members in interface but it's finale.
+    -> Interface fields are public, static and final by default, and the methods are public and abstract.
+    -> Since Java 8, we can have method body in interface. But we need to make it default method:
+        EX: interface Drawable{  
+                void draw();  
+                default void msg(){System.out.println("default method");}  
+            }  
+INTERFACE EXAMPLE:
+    1. Normal: MyBycycle implements Bycycle (MEHODS: speedUp, Break)
+    2. Multiple Inheritance: Plane implements flayable, runnable
+
+MARKER OR TAGGED INTERFACE:
+    -> Interface without any members.
+    -> ex: Serializable, Clonable
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+Abstract vs Interface: JAVATPOINT
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+PACKAGE:
+    -> group of similar types of classes, interfaces and sub-packages.
+    -> categorized in two form, built-in package and user-defined package.
+    -> built in: java, lang, util
+
+    NOTE:
+        If you import a package, all the classes and interface of that package will be imported excluding the classes and interfaces of the subpackages.
+        Hence, you need to import the subpackage as well.
+--------------------------------------------------------------------------------------------------------------------------------------------
+ACCESS MODIFIERS IN JAVA:
+    -> specifies the accessibility or scope of a field, method, constructor, or class.
+    private:
+        - within a clas
+    default:
+        - within a package
+    protect:
+        - within a package or out side of pack using child class
+    public:
+        - everywhere
+    
+NON-ACCESS MODIFIERS:
+     such as static, abstract, synchronized
+
+Java Access Modifiers with Method Overriding:
+    - If you are overriding any method, overridden method (i.e. declared in subclass) must not be more restrictive.
+    ex: below code is not valid
+        class Parent {
+            public void msg(){};
+        }
+        class Child extends Parent {
+            protected void msg(){}
+        }
+    ex: belo code is correct:
+        class Parent {
+            protected void msg(){};
+        }
+        class Child extends Parent{
+            public void msg() {};
+        }
+
+private constructor:
+    - used for singleton or factory patterns.
+
+private data members"
+    - we will set value of private data using getter setter.
+    - ex: back interest feild
+        setInterest(int i) {
+            this.i * 
+        }
+private method
+    - used for internal calculation.
+
+---------------------------------------------------------------------------------------------------------------
+JAVA NESTED CLASSES:
+    -> class inside class.
+    BENEFITS:
+        -> increae encapsulation:
+                -
+        -> Increase Readability:
+                -
+    
+    TYPES OF NESTEAD CLASSES:
+        1. Memer Inner classes:
+                - Normal inner classes
+                    =>
+                - Method Inner classes
+                    =>
+                - Anonymous inner classes
+                    => 
+        2. Static inner classes:

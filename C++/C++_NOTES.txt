@@ -1,0 +1,18 @@
+Inheritance:
+	Where child class can derived property of base class.
+	
+	mode of visibility:
+		-> default: private
+		-> class B : private A
+				=> object of class B can't accses public members of class A
+				=> member functions of class B can access.
+		
+		-> class B : public A
+				=> object of class B can accses public members of class A.
+		
+		-> class B : protected A
+				=> imdeate child can access through member function.
+		
+				
+1> Single inheritance:
+		-> class B : public A

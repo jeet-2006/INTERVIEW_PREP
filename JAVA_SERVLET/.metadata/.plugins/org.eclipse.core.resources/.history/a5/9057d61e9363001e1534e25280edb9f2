@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<form action="add.jsp" method="post">
+		1st number: <input type="number" name="num1"><br>
+		2nd number: <input type="number" name="num2"><br>
+		
+		<!-- <input type=hidden name="CLUSTERID" value="0"> -->
+		<input type="checkbox" name="paramname" value="num1">
+		<input type="checkbox" name="paramname" value="num2">
+		<input type="submit">
+	</form>
+</body>
+</html>

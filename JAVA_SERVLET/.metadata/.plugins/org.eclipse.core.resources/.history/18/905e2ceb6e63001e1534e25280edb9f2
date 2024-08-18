@@ -1,0 +1,35 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1" import="java.util.*"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<% 
+		int n1 = Integer.parseInt(request.getParameter("num1"));
+		int n2 = Integer.parseInt(request.getParameter("num1"));
+		String clusterId = request.getParameter("CLUSTERID");
+		out.println("CLUSTERID: "+ clusterId);
+		Map<String, String[]> parameterMap = request.getParameterMap();
+
+		   // Loop through and print all request parameters
+		   /*for (String paramName : parameterMap.keySet()) {
+		       String[] paramValues = parameterMap.get(paramName);
+		       for (String paramValue : paramValues) {
+		           out.println("Parameter Name: " + paramName + ", Value: " + paramValue);
+		       }
+		   }*/
+		int ans = n1 + n2;
+		out.println(n1);
+		try {
+			out.println("SUM: " + ans/0);
+		} catch(Exception e) {
+			out.println(e);
+		}
+	%>
+	
+	HELLO
+</body>
+</html>

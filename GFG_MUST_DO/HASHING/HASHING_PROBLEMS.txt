@@ -1,0 +1,37 @@
+Sort an array according to the other:
+
+==> Simple. just refer GFG solution.
+
+------------------------------------------------------------------------------------------------
+Sorting Elements of an Array by Frequency:
+
+==> staore frequency in map.
+==> store map pair in vector.
+==> sort vector based on condition.
+==> Need to Modify c++ sort method.
+------------------------------------------------------------------------------------------------
+Largest subarray with 0 sum:
+
+==> if we found same sum after x elements then sum of those elements are 0.
+
+Ex: 1 2 5 -3 -1 -2 0  3
+
+-> here sum upto 5 is 8. 
+-> when we reach to -2 there also sum = 8
+-> so sum of elements between 5 and 0 are 0.
+------------------------------------------------------------------------------------------------
+array-pair-sum-divisibility-problem:
+
+=> EX: [9, 5, 7, 3], k = 6
+=> store modulo of k for each element and frequency of that elements.
+=> [
+		3 : 2,
+		5 : 1, 
+		1 : 1
+   ]
+=> for k = 6 possible modulo is 0 to 5
+=> if 0 occur odd time then pair not possible reurn 0.
+=> else iterate loop from 1 to k.
+=> Then verify count of i and count of k-i shoud same.
+=> if not same then return 0;
+------------------------------------------------------------------------------------------------

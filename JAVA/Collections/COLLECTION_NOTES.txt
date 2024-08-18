@@ -1,0 +1,70 @@
+COLLECTION:
+    - Group of individual objects.
+    - Ex: Books 
+
+FRAMEWORK:
+    - set of classes and interface which provides readymade architecture.
+
+JAVA COLLECTION FRAMEWORK:
+    - JAVA API which provides architecture to store and manipilate objects.
+    - available in java.utl package.
+
+TWO WAYS FOR CREATE ANY COLLECTION:
+    1. Type safe:
+        - same type of data we can insert.
+        EX:
+            ArrayList<Integer> list = new ArrayList<>();
+            list.add(1);
+            list.add(2);
+    2. Type unsafe:
+        - diff type of data we can insert.
+        Ex:
+            ArrayList list = new ArrayList();
+            list.add(1);
+            list.add("magan");
+            list.add(true);
+
+------------------------------------------------------------------------------------------------        
+HASHING:
+    -> convert random size of key to small size usin hash function.
+    -> converted key is hashed key.
+
+    PERFECT HASH FUNCTION:
+        -> for all unique i/p unique o/p.
+                EX: 
+                    hash(ip1) -> op1
+                    hash(ip2) -> op2
+    COLLISION:
+        -> for unique ip same output:
+                EX:
+                    hash(ip1) -> op1
+                    hash(ip2) -> op1
+
+    Generally used hash functions:
+        1. Division method:
+            -> hash(key) => return key % M (M can be annything for example we can take 10)
+        
+        2. Mid square:
+            -> key = 25
+                -> 25 * 25 => 625
+                => either we can take first 2 or last two 62 or 25.
+
+    
+COLLISION RESOLUTION TECHNIQUE:
+    1. Chaining:
+        -> if same hashcode generate then will store as linkedlist.
+        -> Time complexity : linear as we need traverse linkedlist.
+            -> O(X) : where x is avg bucket in same element.
+            -How to optimize this X:
+                1. good hash function.
+                2. More buckets(usually double the capacity).
+                    -Load Facto:
+                        -> Measure that decide when to double bucket size.
+                        -> mostly 75% of bucket size.
+                        -> Threashold value = 0.75 * initial bucket size.
+                        -> if Threasholdpoint crosses then REHASHING (new double size of bucket 
+                           will create and old bucket will copy in new Array) will happen. 
+
+
+
+

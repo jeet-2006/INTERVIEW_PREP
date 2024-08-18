@@ -1,0 +1,116 @@
+MULTITHRADING:
+    Multithreading: Multiple threads within the same process.
+    Multitasking: Multiple processes or tasks.
+        - EX: 
+            -reading book while listening music.
+            - video in smartphone(Here Smartphone doing multitasking)
+            
+Thread vs Procees:
+    - two threads shares same address space.
+    - context switching is less expensive.
+
+Why Multithreading:
+    - utilizing same time for diff tasks.
+
+    - EX: 
+        - while water is boiling we can read news paper.
+        - in word while typing auto correction is working.
+Thread:
+    - light weight sub process.
+
+Main Thread:
+    - once proram runs, then user thread created to execute main().
+    - as long as user thread is alive, the Jvm will not terminate.
+    - Demon thread will stop, if there r no user threads.
+    - before starting thread we can use setDemon(bool) to set thread as user or demon.
+
+IllegalThreadStateException:
+    - if use setDemon method after starting thread.
+
+Two ways to create threads:
+    1. using runnable interface
+        - we can impement other interface as well.
+        - ex: class MyThread implements runnable implements x
+    2. using Thread class
+        - Once you extend thread class then u can not implement multple inheritance.
+        - ex: class MyThread extends Thread
+        - NOT_POSSIBLE: class MyThread extends Thread impements X
+------------------------------------------------------------------------------------------------------------------
+Synchronized:
+    - it ensures that only one thread can execute that specific synchronizedblock or function.
+    - Block:
+        - Synchronized (any object) {}
+        - object should nonNull otherwise NPE will come.
+    - Method:
+        - Synchronized void print(){}
+RACE CONDITION:
+    - two or more thread simulteniously update the smae value.
+    - EX: 
+        -while booking ticket 3 threads comes for 1 seat.
+        -stack class one thread pushing and one thread poping. (IndexOutOfBoundExc..)
+
+LOCK:
+    - we can use any object as a lock in java.
+    -EX:
+        - Synchronized(new Object()){}
+        - Synchronized(new String("ss")){}
+        - these object and string act as lock.
+        - Lock can be any object
+    - if we writre Synchronize before method then no need to write lock as auto lock will create.
+        -EX:
+            - public synchronized bool push(int x){}
+            - compiler will compile above code like this:
+                public push() {
+                    synchronized(this) {
+                        .....
+                    }
+                }
+    - if lock is same for two methods then only one thread can execute those two methods.
+        -EX:
+            t1, t2
+            push() {
+                Synchronized(lock){}
+            }
+            pop() {
+                Synchronized(lock){}
+            }
+            ==> if t1 calling push then then only t1 can call pop (solve race condition).
+
+    - what If we add synchronized keyword befor all methods of class?
+        -> Only one thread can call all methods, then after second thread can call.
+
+    - static synchronized method is independent of non static synchronized
+        - static synchronized(XYZ.class){}
+        - synchronized(this){}
+        - as lock is different they r independent.
+
+------------------------------------------------------------------------------------------------------------------
+
+Thread Safty:
+    - java provides some threadsafe objects, so two threads can't updat at same time.
+    - EX: AtomicInteger, ConcurrentHashMap
+
+Volatile Keyword:
+    - instead of cache thread will read that object from main memory.
+    - so thread 1 change x then it will reflect to tread 2
+
+Real Time Examle:
+    -> wordpade: wihle typing spelling mistakes are checked.
+
+SHORTEST way to create Thread:
+
+    1. using Anonymous class:
+
+        Runnable r = new Runnable() {
+            public void run() {
+                .......
+            }
+        }
+        Thread t = new Thread(r);
+        t.start();
+    
+    2. Using lamda:
+
+        Runnable r = () -> {
+            ..........
+        }

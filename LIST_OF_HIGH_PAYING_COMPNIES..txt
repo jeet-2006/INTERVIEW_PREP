@@ -1,0 +1,445 @@
+99Acres
+99AMDGames
+AMD
+AP Moller Mearsk
+APT Portfolio
+Acceletrade Technologies
+Acko
+Adidas
+Adobe
+Advance Auto parts
+Affable.ai
+Affle
+Agoda
+Aidash
+Airbase
+Airbnb
+Airbus
+Airtel X Labs
+Ajio.com
+Akamai Technologies
+AlphaGrep Securities
+Alphagrep
+Alphonso
+Amagi
+Amazon
+American Express
+Angel one
+Ansys
+Anthem
+Apna
+AppDynamics
+Apptio
+Arcesium
+Arista Networks
+Arm
+Arzooo
+Atlassian
+Autodesk
+Automation Anywhere
+Auzmor
+Avoma
+Azuga Inc.
+BNY Mellon
+Baazi Games
+Bank of America
+Barclays
+Beaconstaq HQ
+BharatPay
+Biofourmis
+Birdeye
+Bizongo
+Black Stone
+Blackbuck
+Blackhawk Network
+Blackrock
+Blackstone
+Blinkit
+Bloomberg LP
+Bluestone
+Booking.com
+Bounce
+Brane Enterprises Private Ltd.
+Brightchamps
+BrowserStack
+Builder.ai
+Buyhatke
+C2FO
+Cadence
+Capillary Technology
+Cars24
+CarsDekho
+Carwale
+Cashfree
+Caw Studio
+Chalo
+ChargeBee
+Chegg
+Ciena
+Cisco
+Citi Corp
+Citicorp
+Citrix
+ClassPlus
+Clear
+ClearTrip
+CleverTap
+Clootrack
+Cloudera
+Clumio
+Codenation
+Cogoport
+Cohesity
+CoinDCX
+CoinDesk
+CoinSwitch Kuber
+Coinbase
+CommerceIQ
+Commvault
+Compass
+Confluent
+Congo AI
+Copado
+Couchbase
+Cred
+CredAvenue (Now Yubi)
+Credit Karma
+CreditSuise
+Cricbuzz.com
+Cure.fit
+Cvent
+DE Shaw
+DP World
+Dailyhunt
+Databricks
+DealShare
+Dehaat
+Delhivery
+Dell
+Delplix
+Dineout
+Directi
+Dolat Capital
+Dream
+Dream Game Studio
+Dream Games
+Dream11
+Dremio
+Druva
+Duestche Bank
+Dukaan
+Dunzo
+EagleView
+EaseMyTrip.com
+EazyDiner
+Edelweiss Financial Sevice Ltd
+Edelweiss Wealth Management
+Edge Focus Partners
+Egnyte
+Electronic arts (EA)
+Epsilon
+Estee Advisors
+Expedia
+Fampay
+FanCode
+Fanatics Inc
+Fanclash
+Fi
+Fivetran
+Flipkart
+FreeCharge
+Freshworks
+Futures First
+Fynd
+GE / GE Healthcare
+Games24*7
+GamesKraft
+Gartner
+GeeksForGeeks (SDE only)
+Glance
+GoMechanic.in
+Gojek
+Goldman Sachs
+Grab
+Graviton Research LLC
+Groupon
+GrowthPal
+Groww
+Google
+Gupshup
+H1
+HackerEarth
+HackerRank
+Happay
+Harness
+Head Digital Works
+Headout
+Healthifyme
+Hevo Data
+Hotstar
+Housing.com
+Hp
+Hypersonix Inc
+Hyperverge
+INDMoney
+Ibibo Group
+IBM ISDL/ISL Labs
+Increff
+Indeed
+Indiagold
+Indiamart
+Indify
+Infinera
+Infoblox
+Infoedge
+Informatica
+Infra.Market
+Inmobi
+Innovaccer
+Instamojo
+Intel
+Intuit
+Itilite
+J.P.Morgan
+Jio
+Josh Talks
+Josh Technology group
+Jovio
+JungleeGames
+Juniper Network
+Jupiter
+Juspay
+KLA
+KPIT
+Khabri Audio
+KhataBook
+Khoros
+Klearnow
+LambdaTest
+Lazypay
+Leadsquared
+LeanIX
+Lemnisk
+Lendingkart
+Lenskart
+Licious
+Lido
+Limeroad
+LinkedIn
+Linq
+Livespace
+Loco
+Lookout
+Lowe’s India
+Luxoft
+MFine
+MPL
+MTX Group
+MagicBricks
+Magnitude
+Make My Trip
+Mastercard
+Mathworks
+Mathysis
+Mckinskey & Co.
+Medi Assist
+Media.net
+Mediatek
+Medibuddy
+Meesho
+Micro Focus
+Microchip
+Micron Technologies
+Microsoft
+Millenium Management
+MindTickle
+Mobikwik
+Moneycontrol.com
+Moneytap
+Moneyview (financial services)
+MongoDB
+Monotype
+Moonfrog Labs
+Morgan Stanley
+Motive
+MotorQ
+MyKaarma
+Myntra
+NK Securities Research
+Naukri.com
+Navi
+Nearby.com
+Neo-Bank
+NetApp
+Netmeds
+Netomi
+Netradyne
+NewFold Digital
+Nextthink
+Nielsen
+NielsenIQ
+Nike
+Ninjacart
+NoBroker
+Nurture.Farm
+Nutanix
+Nvidia
+Nykaa
+OYO
+Observe.AI
+OkCredit
+Ola
+OneTrust
+Opentext
+Oppo
+Optum
+Oracle
+Oracle-Netsuite
+PagarBook
+PaisaBazzar
+PaloAlto Networks
+Park+
+PayU
+Paypal
+Paytm
+PharmEasy
+Phenom
+Phonepe
+Pine Labs
+Planview
+Plivo
+Plum
+PolicyBazaar.com
+Porter
+Postman
+Practo
+Pristyn Care
+Productiv
+Providence
+Publicis Sapient
+Qoala
+Quadeye
+Qualcomm
+Qubole
+Quince
+Quizizz
+Rakuten
+Ramsoft
+Rapido
+Rapyuta Robotics
+Razorpay
+Redbus
+Relevel by Unacedemy
+Rentomojo
+Revolut
+Rippling
+Riverbed Technologies
+Rivigo
+Rizzle
+Rubric
+Rudderstack
+Rupeek
+Rupifi
+SAP Labs
+Sabre
+SalesForce
+Samsung
+Sandisk
+Sandvine
+Sapient
+Savio.in
+Sendinblue
+Sense
+Sentieo an AlphaSense Company
+Sentinelone
+Servicenow
+ShareChat
+Shopflo
+Shuttl
+SigFig
+Silicon Labs
+Simpl
+Sixt
+Skuad
+Slice
+SmallCase
+Sociolla
+Sophos
+Spinny
+Sprinklr
+SprotsKeeda
+SquadStack
+SquarePoint Capital
+StockX
+SumoLogic
+SuveySparrow
+Swiggy
+Synchrony
+Synopsys
+Target
+Tata 1mg
+Teachmint
+Tekion Corp
+Telstra
+Teradata
+Tesko
+Texas Instruments
+Thales
+Thoughworks
+Ticket.com
+Tide
+Times Internet
+Tokopedia
+Toppr
+Tower Research Capital
+TravelTriangle
+Traveloka
+Tredence Inc
+Trell
+Trellix
+TripAdvisor
+Trivago
+TrueCaller
+Turvo
+Twilio
+Twitter
+UBS
+Uber
+Udaan
+UiPath
+Ula
+Unacademy
+Uni Cards
+Unocoin
+Upgrad
+Upstox
+Urban Company
+VISA
+Vedantu
+Vmware
+Wallsoft Labs
+Walmart
+Wells Fargo
+Winzo
+Wisetech Global
+WorldQuant LLC
+Xilinx
+Yatra Online LTD.
+Yellow.ai
+Yugabyte
+Zebpay
+Zee5
+Zenefits
+Zepto
+Zerodha
+ZestMoney
+Zeta
+Zipcar
+Zluri
+Zomato
+Zoom
+Zoomcar
+Zuora
+Zupee
+Zynga
+iRageCapital

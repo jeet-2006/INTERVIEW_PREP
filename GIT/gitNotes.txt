@@ -1,0 +1,44 @@
+GIT ==> Version control system
+
+.gitignore ==> if you want to ignore folder/file then you need to add that thing in .gitignore (only when that folder/file is in a untracked phase).
+
+** GIT DIFF **
+$ git diff ==> compare difference b/w staging files and working directory.
+
+$ git diff --staged ==> compare previous commit with staging area.
+
+
+** DELETE GIT REPOSITORY **
+$ rm -rf .git
+
+
+** GIT LOG COMANDS **
+$ git log -p ==> show log with detailed diff in file.
+
+$ git log -p -3 ==> show log with detailed diff in file up to 3 commits.
+
+$ git log --stat ==> show log with less details like 3 addition 5 deletion.
+
+$ git log --pretty=short ==> show log with author info and commit message.
+
+$ git log --pretty=oneline ==> show each commit info in one line.
+
+$ git log --pretty=full ==> show some more info.
+
+$ git log --since 2.days ==> show commit since 2 days. (we can replace days with weeks, months and years).
+
+-> searc 'git scm usefulformat for git log' for git log formatting.
+
+
+** CLEAR GIT BASH **
+ctrl + L
+
+
+** ADD COMMIT IN PREVIOUS COMMIT **  	
+$ git commit --amend
+
+
+** UNMODIFY AND UNSTAGING FILE **
+$ git restore --staged <file_name> ==> unstage file 
+$ git checkout -f ==> undo all current changes and match latest commit.
+$ git checkout -- <file_name> ==> it matches current file to latest commited file.

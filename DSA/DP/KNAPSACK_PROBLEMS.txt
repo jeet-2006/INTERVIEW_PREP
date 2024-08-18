@@ -1,0 +1,48 @@
+PATTERN:
+    given: 
+        - value array
+        - capicity
+    
+    solution:
+        - either we can select any element or skip to achieve capacity.
+
+
+PROBLEMS:
+1. subset sum problem:
+
+LINK:  https://www.geeksforgeeks.org/problems/subset-sum-problem-1611555638/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=bottom_sticky_on_article
+01 knpsack without value array.
+
+2. Equal sum Partition:
+    -> target = sum/2
+    -> subset sum for target.
+
+3. count of subset sum:
+    -> instead of or perform + operation in find subset.
+
+4. min subset difference:
+    -> target = sum of all elements.
+    -> prepare dp for subset sum for target.
+    -> iterate loop i=0 to i<=sum/2
+    -> using dp check if subset is present with sum if
+    -> if yes then take min diff => diff = min(diff, sum - 2*i)
+
+5. count of min subset difference:
+    -> s2 - s1 = diff
+    -> sum-s1 - s1 = diff
+    -> s1 = (sum - diff)/2
+    -> now find count of subset for s1.
+
+6. Target sum:
+    -> equal to count of min subset difference.
+
+--------------------------------------------------------------------------------------------
+
+UNBOUNDED_KNPSACK:
+    -> we can select same item multiple time.
+                we kept i as same item we can take 
+                              ^
+                              |
+    dp[i][j] = max(price + dp[i][j-wt[i]], dp[i-1][j]);
+
+    -> all other things are same as 0 1 knapsak.

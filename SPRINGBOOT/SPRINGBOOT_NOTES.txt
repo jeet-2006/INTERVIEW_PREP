@@ -1,0 +1,99 @@
+SPRINGBOOT:
+    -> module of spring.
+    -> make developement fast.
+    -> easy to create production ready app.
+    -> spring + embeded server
+    -> auto configure.
+
+meta-inf/spring.factories:
+    -> all auto configs are written here which will enable based on condition.
+    -> conditional annotation will written in respective dependency classes.
+
+SPRINGCONTAINER: 
+    -> contains object of class which has annotation @Container.
+
+=> By default spring uses Singleton patern.
+=> By default without calling getBean spring creates object for bean class.
+
+@Scope("Prototype"):
+    => it will allow u to create multiple objects
+    => object will create if and only u call getBean();
+
+@Auotowired:
+    => it will search for object in spring container
+    => By default it will search by type.
+    => if u want to search by name
+                                Then => Add @Qualifier("laptop") after @Autowired
+
+@SpringBootApplication: 
+    core annotation in the Spring Framework that is commonly used to bootstrap and configure a Spring Boot application.
+    
+    - it contains main 3 annotation:
+    1. @SpringBootConfiguration:
+            which contains @configuration annotation:
+            USE: 
+                => it is class level annotation.
+                => it uses java based configuration.
+                => it converts normal class to spring java based configuration class.
+
+    2. @EnableAutoConfiguration
+        USE:
+            => it's configure beans automatically which are present in classPatch.
+
+
+    3. @ComponentScan:
+        USE:
+            => it scans package and sub package for class with component annotation and take that class in spring container.
+
+*@component*
+    USE: To adding this annotation we are adding particular class in springboot radar.
+
+*@Autowired*
+    USE: establish wiring between two classes.
+        : no need to create object manually.
+
+@RequestBody:
+    -> convert JSON data from the request body into a corresponding Java object or parameter.
+
+@PathVariable:
+    -> It allows you to capture and use dynamic values (e.g., IDs or other parameters) from the URL.
+    EX: http://localhost:8080/find/2
+    we can take 2 as Id using this.
+
+-------------------------------------------------------------------------------------------------------------
+List of hibernate validation:
+@NotBlank
+@Emal
+@Length(max = 10, min =1)
+@Size(max=10, min = 1)
+@Future
+.......so on
+-------------------------------------------------------------------------------------------------------------
+NOTES::
+    whenever you are using H2database check all required dependency added in pom.xml or not.
+    -> Alt + insert : to generate in intelijj
+-------------------------------------------------------------------------------------------------------------
+CONFIGURE JSP IN SPRINGBOOT:
+
+Step1:
+    -> cretae folder with name views under main.
+    -> keep all jsp file in this folder.
+
+step2:
+    -> set two properties in app.properties(path setting)
+            1.spring.mvc.view.prefix=/WEB-INF/views/
+            2.spring.mvc.view.suffix=.jsp
+
+step3:
+    -> Add jasper dependency:
+        : for convert jsp file into java servlet
+
+-------------------------------------------------------------------------------------------------------------
+APPLICATION.PROPERTIES:
+    -> used for configuration.
+            ex: server.port=8080
+
+------------------------------------------------------------------------------------------------------------- 
+JPA(Java persistance api):
+    -> it's ORM(object relation mapping) tool.
+    -> hibernate is implementation of jpa.           

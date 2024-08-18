@@ -1,0 +1,54 @@
+BINARY TREE: Tree with max two child.
+				  max possible nodes
+
+     20 .. level 0              => 2^0 = 1
+    /  \ 
+  10    25 ..level 1		=> 2^1 = 2
+  /\	 .
+ 5 10	 . ... level 3		=> 2^2 = 4
+  .
+  .
+  .
+  .	   ... level i  	=> 2^0 = 2^i
+
+=> for ith level max possible node is 2^i.
+
+=> for binary tree with height h total max possible nodes = 2^h - 1.
+
+LEFT VIEW OF BINARY TREE:
+	-> preorder + 1 node from each level.
+	-> total number of nodes print = height of binary tree.
+	-> cond: if (ans.size() < height) ans.push_back(root->data);
+	
+RIGHT VIEW OF BINARY TREE:
+	-> same as left view just root-right-left.
+
+Top view:
+	-> print nodes with unique horizontal distance(hd).
+	-> level order traversal as HD came into picture.
+	-> hd for root=0, first left child=-1, first right child = 1.
+	-> store ans in sorted map it will give left to right nodes.
+	-> q.push(pair(0, root)) => 0 is hd.
+	
+BOTTOM VIEW:
+	-> Simple level order traversal and store mp[hd] = temp->data;
+	-> As in bottom view only last HD will visible.
+	-> q.push({0, root});
+	
+Check for BST:
+	-> 1st WAY: inorder traversal should sorted.
+	-> 2nd WAY: check vether left and right sub trees are BST.
+				-> isBSTUtil(root, INT_MIN, INT_MAX);
+				-> check in gfg is confused.
+				
+Vertical Traversal of Binary Tree:
+	-> 1st WAY: same as BOTTOM VIEW just replace map with multimap.
+	-> 2nd WAY: same as BOTTOM VIEW just mp[hd].push_back(root->data);
+	
+Diameter:
+	-> maximum distance between two leef nodes.
+	-> left-right-root
+	-> add calc in height code.
+	-> calc: ans = max(1+lh+rh, ans);
+	
+	

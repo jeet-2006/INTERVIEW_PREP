@@ -1,0 +1,22 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+
+class A {
+    void msgA(){
+        System.out.println("A");
+    }
+}
+
+class B extends A {
+    void msgB(){
+        System.out.println("B");
+    }
+}
+
+public class C {
+    public static void main (String args[]) {
+        A a = new B(); // upcasting
+        ((B) a).msgB(); // downCasting
+    }
+}

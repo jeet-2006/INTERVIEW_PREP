@@ -1,0 +1,18 @@
+EX: str = "gfg" NOTE: . means ""
+=> each step either we can choose charecter or without select.
+		
+. -> .	  TOTAL: 2*0 = 1
+g -> ., g 	TOTAL: 2*(1) = 2
+f -> ., g, f, fg 	TOTAL: 2*2 = 4		
+g -> ., g, f, fg, g, gg, gf, gfg	TOTAL: 2*4 = 8
+
+BUT IN LAST STEP g is repeating value To aapde prli var jya g aayo hoy aena pela kul jetla char hoy aetla bad karva pade ahi pela g pela 1 char 6 . aetle 8-1 kaeta 7 javab male.
+
+EX: abcabd
+.:	1
+a:	2*1 = 2	
+b:	2*2 = 4
+c:	2*4 = 8
+a:	2*8 = 16 - aagadna a ni pela ni value => 16-1 = 15
+b:	2*15 = 30 - aagad na b ni pela ni value => 30 -2 = 28
+d:	2*28 = 56

@@ -1,0 +1,5 @@
+16-08-23 => Catalan Number (need to check pattern for this).
+
+17-08-23 => next-smallest-palindrome4740:
+	EX: next smallest palindrome of 91 is 99, 234 => 333.
+

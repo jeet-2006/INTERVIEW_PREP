@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<form action="add" method="post">
+		1st number: <input type="number" name="numb1"><br>
+		2nd number: <input type="number" name="numb2"><br>
+		
+		<!-- <input type=hidden name="CLUSTERID" value="0"> -->
+        
+        <input type="radio" name="paramname" value = "1" required>
+        <input type="radio" name="paramname" value = "2" required>
+		<input type="submit">
+	</form>
+</body>
+</html>

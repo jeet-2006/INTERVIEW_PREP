@@ -1,0 +1,57 @@
+Apache Kafka: 
+    -> open-source stream-processing platform
+    -> Kafka is designed as a distributed publish-subscribe messaging system
+    -> publisher: sender
+    -> sucriber: consumer
+    -> it deals with the continuous flow of data,
+    USE:
+        1>  Stock Market App: Data is continuously updating.
+                            : SO continuous flow of data.
+        2>  in news website Reporter publishes news artical related to sports.
+            So it simply publishes articles to people who sucribed to sports.
+            No direct connection between Reporter and Sports Fan.
+        3> Zomato live location tracking.
+-----------------------------------------------------------------------------------------------------------------------------------------------
+THROUHPUT: 
+    if high: we can retrive more data in less time.
+    if low: retrive less data in less time
+
+=> THROUGHPUT of Kafka is very high and of Database is low.
+
+WHY KAFKA:
+    1> High THROUGHPUT:
+    2> Fault Tolerance: it stores copy of data so in case of error we have backup
+                      : Leader node will send data.
+                      : if Leader node not available then another node will become leader.
+    3> Durable: Becase data is available on multiple node
+-----------------------------------------------------------------------------------------------------------------------------------------------
+KAFKA ARCHITECTURE:
+    -> Producer
+    -> Kafka echosystem:
+            => cluster:
+                    => Brokers: like database
+                            => Topic: like table
+                                    => partition:
+                                            here data will store with help of offset.
+            => Zookepeer:
+                    => it helps brokers for state management.
+-----------------------------------------------------------------------------------------------------------------------------------------------
+RUN KAFKA:
+1st: start Zookepeer    
+    => bin\windows\zookeeper-server-start.bat config\zookeeper.properties
+2nd: start Kafka
+    => bin\windows\kafka-server-start.bat config\server.properties
+
+KAFKA with console:
+1-> kafka Topic
+2-> kafka-console-Producer
+3-> kafka-console-consumer
+-----------------------------------------------------------------------------------------------------------------------------------------------
+CREATE TOPIC:
+    bin\windows\kafka-topics.bat --create --topic <topic_name> --bootstrap-server localhost:9092
+LIST OF TOPICS:
+    bin\windows\kafka-topics.bat --list --bootstrap-server localhost:9092
+CREATE PRODUCER:
+    bin\windows\kafka-console-producer.bat --topic user-topic --bootstrap-server localhost:9092
+CREATE CONSUMER:
+    bin\windows\kafka-console-consumer.bat --topic user-topic --from-beginning --bootstrap-server localhost:9092

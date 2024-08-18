@@ -1,0 +1,10 @@
+STREAM API:(related to collections.)
+=> IO stream is sequence of data diferent from STREAM API.
+=> intoduce in java 1.8
+=> it will help to process group of objects.
+=> reduce code length.
+
+IMPLEMENTATION:
+we can implement this using java Stream interface.
+
+PREDICATE => boolean value function

@@ -1,0 +1,91 @@
+ANY:
+	-> where id = any(20, 300)
+	-> id should either 20 or 300
+
+ALL:
+	-> where count > All(30, 40)
+	-> count should greaterthan 30 and 40 both
+
+Exist:
+	where exist(select 1 from order table where o.id = x.id)
+	-> checking atlease one record should present.
+
+In:
+	-> same as Exist
+	-> but compare all value.
+
+Join:
+	-> used when we want to select other table columns
+
+
+
+
+
+
+
+
+
+
+
+
+*INDEX IN SQL*
+
+==> we are using index for quickly retrive data from database.
+==> just like index in book
+
+I/O cost:
+	-> RAM will call block of harddisk and search data.
+
+=> indexing will reduce I/O cost.
+	-> it means reduce number of call to hdd block.
+
+=> index will also store in hardisk.
+	-> when u search data then index will come into ram.
+
+=> index will contain (key,value)|pointer 
+	-> pointer is for block address.
+
+=> index will store data in sorted manner.
+	-> take log(n) complexity
+
+*Two Type of INDEX*
+1. Sparce INDEX: This index contains each block as one record. (we can use this if data is ordered)
+		-> this index will give block number so we can take from that block.
+2. Dance Index: This index contains all records from hard disc.
+
+Types of indexes:
+	1. Primary:
+		-> used when data is ordered and it has key.(1, 2, 3, 4)
+		-> if u create primary key, primary index will automatically create.
+		-> sparce
+		-> atmost 1 primary index can create on table.
+
+	2. Cluster:
+		-> used when data is ordered and non key(1 2 2 2 3 3 4)
+		-> sparce
+		-> block handler needed for search as duplicate value is there.
+		-> atmost 1 cluster index can create on table.
+	
+	3. Secondary:
+		-> used when data is unordered.
+		-> Dense 
+		-> empId, name, Pan (in case of pan => unordered + key)
+		-> in case of name unordered + non key:
+					-> this need one extra layer(intermediate block) to search duplicates.
+					-> time complexity: log(N) + k, where k is time to search in intermediate blocks.
+
+VIEW:
+	-> Virtual table.
+	-> resultset of Stored query.
+	-> change in base table can change view.
+	READ-ONLY views:
+		- we can't modify.
+	UPDATABLE VIEWS:
+		- we can give insert, update delete permission.
+		- only DML commands will apply.
+	METERIALIZED VIEW:
+		- it will take snapshots from server database.
+		- it require some space.
+	ADVANTAGES:
+		- restrict data access.
+		- present different view of same data.

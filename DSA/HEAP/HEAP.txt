@@ -1,0 +1,15 @@
+HEAP:
+    => A complete binary tree.
+	
+MIN_HEAP:
+	=> root is always less than child elements.
+
+Max_heap
+	=> root is always greater than child elements.
+	
+Heap_Sort:
+	=> create max_heap.
+	=> swap root with last element.
+	=> do heapify for n-1 element.
+	
+	

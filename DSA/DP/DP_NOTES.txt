@@ -1,0 +1,3 @@
+Dynamic Programming:
+	-> dividing main proble in to small sub problem.
+	-> we will use dp when sub problems are over lapping.

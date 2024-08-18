@@ -1,0 +1,414 @@
+Q) Can you save a Java source file by another name than the class name?
+Ans:
+	=> Yes, if the class is not public.
+	=> while executing u need to use class name.
+
+Q) Why is the Java main method static?
+Ans:
+	It is because the object is not required to call a static method. 
+	If it were a non-static method, JVM creates an object first then call main() method that cause extra memory allocation.
+
+Q) Can we execute a program without main() method?
+Ans: 
+	No, one of the ways was the static block, but it was possible till JDK 1.6. 
+	Since JDK 1.7, it is not possible.
+
+Q) How to load class?
+Ans:
+	using class.forName()
+
+Q) Use of super class refernce for child class
+Ans:
+	it's giving power that using single refrence we can create sub classes instace.
+	Animal a = new Dog();
+	a = new Cat();
+	a = new cow();
+
+	USECASE: Factory pattern uses this concept.
+
+Q) How interface acheive 100% abstraction and abstract class can not?
+Ans:
+	Interface has only defination of method no implementation,
+	while Abstract class has both defination implementation.
+
+Q) can we create class object inside class?
+Ans:
+	You can create and instantiate objects of classes anywhere inside the class, 
+	but to use them inside the main method you'll need to declare them as static.
+
+Q) Autoboxing
+Ans: 
+	automatic conversion from premtive to object class,
+	int to Integer
+
+Q) Compareble vs comparator:
+ANS: 
+	Comparable:
+		-> used for single sorting logic.
+		-> class Emp implements comparable<Emp>.
+		-> override compareTo method.
+		EX:
+			public int compareTo(Emp o){
+				return this.empId - o.empId;
+			}
+		-> whenever we call Collections.sort(emp1) above method will call.
+	
+	comparator:
+		-> we can right muliple comparator based on need.
+		-> Collection.sort(emp1, new IdComparator())
+			class IdComparator implements Comparator<Emp>{
+				public int compare(Emp o1, Emp o2) {
+					return o1.getId() - o2.getId()
+				}
+			} 
+		->sort name wise :Collection.sort(emp1, new NameComparator())
+
+
+Q) what is refrence and content comparision?
+ANS:
+	refernce:
+		-> 	Student s1 = new Student()// storing refernce in s1.
+			Student s2 = new Student()
+			if (s1 == s2)// refernce comparision
+
+	Content:
+		-> s1.x == s2.x
+
+Q) what is Object class?
+Ans:
+	-> top most parent java class.
+	-> by default all classes are child of Object class.
+
+Q) what is equals(Object ob) method?
+ANs:
+	-> By default equals method compares refrence.
+	-> we can override and change logic to content comparision.
+
+
+Q) how hashmap internally works?
+Ans:
+	-> mp.put("abc", 1):
+		-> initially 16 bucket will create 0 1to 15.
+		-> it's linkedlist structure.
+		-> put method will calculate index based on hash.
+		-> then store key, value at index in form of node.
+		-> node(hashcode, key, value, next).
+		-> if data present in index then refernceof node stores in existing node next.
+		-> if key is same then node will replace.
+		-> if key is null it will store at first bucket 0 index.
+		-> in java 8 it's converting node connection in binary tree.
+				-to reduce complexity to logn.
+		-> threshold=12
+				-> if we insert 13th entry then hash size will increase
+
+	-> mp.get("abc")
+		-> first hash code will generate
+		-> based on hash code will find index i.
+		-> using key "abc" will search our node at ith index.
+
+Q) what is maven and gradle?
+Ans:
+    -> project management tool.
+    -> manage dependency.
+
+Q) which data structure hashMap represent?
+Ans:
+	-> hash table
+
+Q) which data structure hashMap internally use?
+Ans:
+	-> Array for buckets
+	-> linkedlist for store key, value.
+
+Q) is hashMap thread safe?
+Ans: 
+	-> No, multiple thread can modify value at same time.
+	-> new version java intruduce ConcurrentHashMap for thread safety.
+
+Q) How to remove value while iterating over hashMap?
+Ans:
+	-> using remove() method of iterator.
+	Iterator it = mp.entrySet().iterator();
+	while (it.hasNext) {
+		if (cond) {
+			it.remove();
+		}
+	}
+
+Q) what is load factor in hashMap?
+Ans:
+	-> it controlls resize of hashMap table(bucket size)
+
+Q) How many entries u can store in hashmap? max limit?
+Ans:
+	-> No limit.
+	-> but size() will return int so if entries are more than int then this method will fail.
+	-> java 8 provides method mappingCount() which will return long.
+
+Q) diff between capacity and size in hashMap?
+Ans:
+	-> Capacity:
+			elements can be store.
+	
+	-> size:
+			total current etries.
+
+Q) concurrentmodification Exception?
+Ans:
+	-> multiple threads accssing same data.
+
+Q) Method chaining
+Ans:
+	-> multiple methods call in same line.
+	-> student.setAge().setName().setCity()
+
+Q) Dynamic proxy
+Ans:
+	-> when u want to add some checks before calling original method.
+	-> EX: mp.put("jay", 2);
+			if I don't wnat to take jay as key then I will use this.
+	-> Map m = Proxy.newProxyInstance(parameters).
+	-> see video for details.
+
+Q) Generic method
+ANS:
+	-> public static <k> k doSomething(K k) {
+		sout("helo");
+		return K;
+	}
+
+	-> K can be anything string, int
+
+Q) can we use className and interface name as a variable?
+ANS:
+	-> Yes.
+	-> int Integer = 1
+	-> char String = '7'
+
+Q) What is serialization and deserialization?
+ANS:
+	-> Serialization:
+			- convert state of object into byte stream.
+			- byte stream can be:
+					1. transfer to network
+					2. store into files
+					3. store in db
+
+	-> Deserialization:
+			- reverse of Serialization
+
+Q) what is record?
+ANS:
+	-> itroduced in java 14
+	-> it will create getter, setter, constructor, toString automatically.
+
+Q) Interface static and default method
+ANS:
+	-> public default void xyz(){sout("common msg")};
+		 	-> no need to initialize method in child class.
+			-> used to provide generic logic to child class.
+		
+	-> public static void xyz(){sout("sss")}
+			-> now child class can not override this method.
+			-> @override will show error
+
+Q) Immutable and mutable objects.
+ANS:
+	-> Immutable:
+			- object that we can not change
+
+	-> Muttable
+			- object that can be change
+
+Q) What is SOLID principle?
+ANS:
+	1. SRP (Single Responsibility Principle):
+			- each class should has single relevant responsibility.
+			- Single reason to change.
+			- Violation:
+					- Studen class have 3 methods:
+						1. addStudent()
+						2. printdetails()
+						3. calculatePercentage()
+
+			- To achweive SRP will do below steps
+					- create 3 class based on responsibility
+					- Student class can have only getStudent
+					- StudentDetail class have printdetails()
+					- StudentResult class have calculatePercentage()
+	
+	2. OCP (Open Closed Principle):
+			-if new requirement come then Module should open for extension and closed for modification
+
+			-Violation:
+					public class VehicleInfo  
+					{  
+						public double vehicleNumber(Vehicle vcl)   
+						{  
+							if (vcl instanceof Car)   
+							{  
+								return vcl.getNumber();  
+							}
+							if (vcl instanceof Bike)   
+							{  
+								return vcl.getNumber();  
+							}  
+						} 
+					} 
+			-to achieve OCP:
+					- car, bike or truck can extends Vehicle class.
+					- then they can override vehicleNumber method.
+					- so existing function will not change.
+
+	3. LSP (Liscove Substitution Principle):
+			- if claas B is subclass of A then A should be replace with B without breaking behaviour of program.
+			-subclass should extends capability of parent not narrow it down.
+			
+			EX:
+				class bike {
+					turnOEngine() {
+						sout("started");
+					}
+				}
+
+				class bycycle extends bilke {
+					turnOnEngine() {
+						sout("No engine");
+					}
+				}
+			-> bycycle does not ave engine so degraded capability.
+
+	4. ISP (Interface segragation Principle):
+			-Create interface where client should not implement unnecessary methods.
+
+			EX:
+				interface RestaurantEmployee {
+					void serveFood();
+					void cook();
+					void cleanFloor();
+				}
+
+				waiter implements RestaurantEmployee {
+					void serveFood(){}
+
+					void cook();// unnecessary method
+					void cleanFloor(); // unnecessary method
+				}
+
+			Sol:
+				waiter implements waiterInterface {
+					void serveFood(){}
+					void getOrder(){}
+				}
+
+	5. DIP (Dependency Inversion Principle):
+			- class should depend on intrface rather than concreate class.
+
+			VIOLATION:
+				class Mackbook {
+					private WiredKeyboard keyboard;
+					private WiredMouse mouse;
+
+					public Mackbook(){
+						keyboard = new WiredKeyboard();
+						mouse = new WiredMouse();
+					}
+				}
+
+			Solution:
+				- create KeyBoard and Mouse interfaces.
+
+				class Mackbook {
+					private Keyboard keyboard;
+					private ouse mouse;
+
+					public Mackbook(Keyboard k, Mouse m){
+						keyboard = k;
+						mouse = m;
+					}
+				}
+				-> k and m can be wired or wireless.
+
+Q) what is Annotations?
+ANS:
+	-> provide extra info about program to compiler.
+
+	1. @Override
+	2. @SupressWarning: avoid depricated warning.
+	3. @Deprecated: used to mark depricate method.
+	4. @FunctionalInterface: checks wether interface is FunctionalInterface(having only 1 abstract method)
+	5. @Target: it will tell where we will use annotation
+				ex: @Target({Element.type, ELement.Method})
+
+
+Q) what is java exception?
+ANS:
+	-> abnormal condition.
+	-> run time error.
+
+	Exception handeling:
+		-> normally terminates program.
+
+Q) Is it always necessary to create objects from class?
+ANS:
+	-> No. An object is necessary to be created if the base class has non-static methods.
+
+Q) Java heap vs stack memory:
+ANS:
+	Heap:
+		-> when we create object.
+		-> utilized run in runtime.
+	Stack:
+		-> store methods frame.
+		-> whenever method calls new method frame will push on stack.
+		-> fixed memory
+
+Q) Shallow copy and Deep copy:
+ANS:
+	Shallow copy:
+		-> it gives same reference of original object.
+		-> Obj ob2 = obj1;
+		-> if obj1 got changed then obj2 also will change.
+		-> used for Imutable object(which values will not change)
+	
+	Deep Copy:
+		-> reference of both object will different
+		-> Using copy constructor.
+		-> copied object will not change due to original one.
+		-> using clone() method.
+		-> used for mutable object
+
+
+Q) Is it possible that the ‘finally’ block will not be executed? If yes then list the case.
+ANS:  
+	Yes. It is possible that the ‘finally’ block will not be executed. The cases are-
+		- Suppose we use System.exit() in the above statement.
+		- If there are fatal errors like Stack overflow, Memory access error, etc
+
+Q) Whay String is immutable?
+ANS:
+	-> same value of Strings point to one refernce in String pool so save memory.
+	-> COllection like Map<String, int>:
+			-> if it's mutable the  key of map can be modify.
+			-> so,the retrieval of the desired data is not possible.
+	-> Multithreading:
+			-> we can share it to different threads.
+
+Q) How would you differentiate between a String, StringBuffer, and a StringBuilder?
+ANS:
+	Storage:
+		-> String: String pool | StringBuffer and Builder: Heap
+	Mutability:
+		-> String: Immutable | StringBuffer and Builder: Muttable
+-------------------------------------------------------------------------------
+===>  we cannot use this() and super() keywords in the same block
+-------------------------------------------------------------------------------
+
+Q) Why Interface don't have constructor and abstract class have?
+ANS:
+	-> Interface have private static finale member variale so no need of that.
+
+
+
+
+	

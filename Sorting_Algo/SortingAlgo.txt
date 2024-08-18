@@ -1,0 +1,7 @@
+Quick Sort:
+    -> select pivot as (first, last or middle) element.
+    -> find correct position for pivot where left values are lesser than pivat and right are greater.
+    -> place pivot in that pos and return that pos.
+    -> Now perform same thing on left part and right part until left < right.
+
+NOTE: see geeks for geeks your code.

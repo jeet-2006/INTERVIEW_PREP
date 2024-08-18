@@ -1,0 +1,30 @@
+MONOLITHIC ARCHITECTURE:
+	=> Single jar all modules are there.
+	DISADVANTAGE:
+		=> difficult to manage.
+		=> change in module still whole aplication need to be deploy.
+		=> difficult to adopt new technology.
+		=> SIngle bug may down whole application.
+	ADVANTAGE:
+		=> Simple to develop
+		=> simple to build and deploy.
+		
+MICROSERVICES:
+	=> small services that work together.
+	
+	ADVANTAGE:
+		=> Resolve all disadvantage of MONOLITHIC.
+		
+MICROSERVICES ARCHITECTURE:
+	API GATEWAY:
+		=> Single end point
+		=> user interact with this gateway and this gateway will interact with microservices.
+	
+	Hystric Dashboard:
+		=> fault tolerance.
+	
+	Eureca Service Registery:
+		=> it's microservice where we are registering our microservice.
+		
+HOW MICROSERVICES WILL INTERACT EACH OTHER:
+	=> Using http
